@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sp-pandas-wrapper"
+version = "0.1.0"
+description = "Convenience wrapper for loading SharePoint Excel files into pandas DataFrames"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name="Ira Hatfield" },
+    { name="Kassidon Hatfield" }
+]
+requires-python = ">=3.9"
+
+dependencies = [
+    "pandas>=2.0",
+    "office365-rest-python-client>=2.5.0",
+    "openpyxl>=3.1"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "black"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
