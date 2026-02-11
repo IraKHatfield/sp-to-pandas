@@ -22,6 +22,7 @@ Example:
 
 ```json
 connection_object = {
+    'connection_type':"user"
     'username':"TestUser@Mail.com",
     'password':"Password",
     'siteurl':"https://tenant.sharepoint.com/sitename/",
@@ -34,6 +35,15 @@ connection_object = {
 
 }
 ```
+
+### Connection Type
+
+#### Options Are As Follows:
+
+User Credential Auth:'user'
+Certificate Credential:'certificate'
+App Principle Auth:'app'
+Certificate CSV:'csv'
 
 NOTE: Not all of these values will be used for a given authentication method. Below is a short list of what you need for each supported method
 

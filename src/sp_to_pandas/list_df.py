@@ -2,13 +2,23 @@
 
 class list_df:
 
-    # Constructor
-
+    # Constructor Defines Connection Type
     def __init__(self, connection_object):
 
-        if connection_object.connection_type == "user":
+        if connection_object.connection_type == 'user':
             self.User_Credentials(
                 connection_object.username, connection_object.password, connection_object.siteurl)
+
+        elif connection_object.connection_type == 'certificate':
+            self.Certificate_Credentials(connection_object.clientid, connection_object.thumbprint,
+                                         connection_object.siteurl, connection_object.certificate_path, connection_object.tenant)
+        elif connection_object.connection_type == 'app':
+            self.App_Principle(connection_object.client_id,
+                               connection_object.client_secret, connection_object.site_url)
+        elif connection_object.connection_type == 'csv':
+            self.Certificate_CSV(connection_object.csv_path)
+
+    ## Connection Types##
 
     def User_Credentials(self, username, password, siteurl):
         # imports
@@ -89,3 +99,27 @@ class list_df:
         self.ctx = ClientContext(self.site_url).with_client_certificate(
             self.tenant, **self.cert_settings)
         self.web = self.ctx.web.get().execute_query()
+
+    # Requests
+'''
+Place any functions that request data from sharepoint
+'''
+
+# Transformation
+'''
+Place functions that transform data from raw sharpoint payload into dataframe
+'''
+
+# Data Sanitization Tools
+
+'''
+Place any functions that have to do with transforming data types. string to date exct
+Place any functons that have to do with verifying data
+'''
+
+# Data Filtering and Manipulation Tools
+
+'''
+place any functions that have to do with filtering
+place any functions that have to do with updating data
+'''
