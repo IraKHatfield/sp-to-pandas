@@ -4,14 +4,11 @@ class list_df:
 
     # Constructor
 
-    def __init__(self,):
-        from office365.runtime.auth.user_credential import UserCredential
-        from office365.sharepoint.client_context import ClientContext
-        from office365.runtime.auth.client_credential import ClientCredential
-        import os
-        import sys
-        import regex as re
-        import base64
+    def __init__(self, connection_object):
+
+        if connection_object.connection_type == "user":
+            self.User_Credentials(
+                connection_object.username, connection_object.password, connection_object.siteurl)
 
     def User_Credentials(self, username, password, siteurl):
         # imports
