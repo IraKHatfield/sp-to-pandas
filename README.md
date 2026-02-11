@@ -51,6 +51,7 @@ NOTE: Not all of these values will be used for a given authentication method. Be
 
 ```json
 connection_object = {
+    'connection_type':"user"
     'username':"TestUser@Mail.com",
     'password':"Password",
     'siteurl':"https://tenant.sharepoint.com/sitename/"
@@ -65,6 +66,7 @@ NOTE: This method has been depreciated by microsoft: https://learn.microsoft.com
 
 ```json
 connection_object = {
+    'connection_type':"certificate"
     'siteurl':"https://tenant.sharepoint.com/sitename/",
     'tenant':"tenant"
     'client_id':"Id",
@@ -79,6 +81,7 @@ NOTE: More information on creating creating certificate ect here: https://learn.
 
 ```json
 connection_object = {
+    'connection_type':"app"
     'siteurl':"https://tenant.sharepoint.com/sitename/",
     'client_id':"Id",
     'client secret':"secret"
@@ -92,6 +95,7 @@ NOTE: More information on creating client id and secret here: https://learn.micr
 
 ```json
 connection_object = {
+    'connection_type':"csv"
     'csv_path':"Path To CSV"
 
 }
